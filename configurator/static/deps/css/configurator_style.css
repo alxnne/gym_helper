@@ -1,0 +1,332 @@
+/* styles for all body */
+:root {
+    --color-bg: #212121;
+    --color-bg-aside: linear-gradient(360deg, #272E35 0%, #333E3B 100%);
+    --color-bg-card: #373737;
+    --color-main: #D0F45D;
+    --color-second-main: #4A66E3;
+    --color-third-main: #40474A;
+    --color-main-text: #FFFFFF;
+    --default-margin: 1.67rem;
+    --default-border-radius: 1.04rem;
+    --color-default-step-btn: linear-gradient(90deg, rgba(115, 115, 115, 0.1) 0%, rgba(208, 215, 209, 0.1) 100%);
+    --color-hover-step-btn: linear-gradient(90deg, rgba(115, 115, 115, 0.5) 0%, rgba(255, 255, 255, 0.5) 100%);
+    --color-active-step-btn: linear-gradient(90deg, #737373 0%, #FFFFFF 100%);
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 24px;
+}
+
+body, * {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: -0.04em;
+    text-decoration: none;
+    border:none;
+    background: none;
+    color: var(--color-main-text);
+    line-height: 0.945;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+img,a {
+    display: block;
+}
+
+body,html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    background-color: var(--color-bg);
+}
+
+.page-container {
+    flex-grow: 1;
+}
+
+/* styles for aside */
+
+aside {
+    display: flex;
+    flex-direction: column;
+    margin-right: calc(3 * var(--default-margin));
+}
+
+aside  .logo {
+    position: relative;
+    z-index: 10;
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-top: calc(0.325 * var(--default-margin));
+    margin-bottom: calc(1.425 * var(--default-margin));
+    text-align: center;
+}
+
+aside nav ul {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.17rem;
+    background: var(--color-bg-aside);
+    list-style-type: none;
+    border-radius: calc(1.6 * var(--default-border-radius));
+    gap: calc(1.2 * var(--default-margin));
+    box-shadow: 0px -303px 250px -7px var(--color-main);
+}
+
+aside nav ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.58rem;
+    height: 2.58rem;
+    border-radius: 50%;
+    background: var(--color-third-main);
+    transition: all .4s ease;
+}
+
+aside nav ul li a.active,
+aside nav ul li a:hover,
+aside .profile-nav-container .logout:hover {
+    background: var(--color-main);
+}
+
+aside nav ul li a.active svg path,
+aside nav ul li a:hover svg path,
+aside .profile-nav-container .logout:hover svg path {
+    fill: var(--color-third-main);
+}
+
+aside nav ul li a.active svg path.stroke,
+aside nav ul li a:hover svg path.stroke {
+    stroke: var(--color-third-main);
+    fill: none;
+}
+
+aside .profile-nav-container {
+    margin-top: auto;
+    margin-bottom: calc(2 * var(--default-margin));
+    display: flex;
+    flex-direction: column;
+    padding: 0.17rem;
+    background: var(--color-bg-aside);
+    border-radius: calc(1.6 * var(--default-border-radius));
+    gap: calc(1.2 * var(--default-margin));
+}
+
+aside .profile-nav-container a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.58rem;
+    height: 2.58rem;
+    border-radius: 50%;
+    transition: all .4s ease;
+}
+
+aside .profile-nav-container .logout {
+    background: var(--color-third-main);    
+}
+
+aside .profile-nav-container .nav-profile {
+    background: var(--color-second-main);
+}
+
+/* styles for header */
+
+header {
+    display: flex;
+    align-items: center;
+    height: 2.5rem;
+    width: 63.33rem;
+}
+
+header .page-name {
+    font-weight: 700;
+    font-size: 1.33rem;
+}
+
+header .premium {
+    margin-left: auto;
+    font-size: 0.83rem;
+    width: 6.33rem;
+    height: 2.5rem;
+    background-color: var(--color-second-main);
+    border-radius: var(--default-border-radius);
+    box-shadow: 6px -19px 250px 42px var(--color-second-main);
+}
+
+/* styles for all main */
+
+.page-container {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--default-margin);
+}
+
+main {
+    margin-top: calc(1.1 * var(--default-margin));
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 104px);
+}
+
+/* styles for main in configurator */
+
+.configurator-form .step-title {
+    font-size: 1.33rem;
+    text-align: center;
+    margin-bottom: calc(0.8 * var(--default-margin));
+    transition: all .4s ease;
+}
+
+.configurator-form .step-button-container {
+    display: flex;
+    gap: calc(0.25 * var(--default-margin));
+    margin-bottom: var(--default-margin);
+}
+
+.configurator-form .step-button-container button {
+    position: relative;
+    flex: 1;
+    height: 0.33rem;
+    border-radius: calc(0.08 * var(--default-border-radius));
+    background: var(--color-default-step-btn);
+    overflow: hidden;
+}
+
+.configurator-form .step-button-container button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--color-hover-step-btn);
+    opacity: 0; 
+    transition: opacity 0.4s ease; 
+    z-index: 0;
+}
+
+.configurator-form .step-button-container button:hover:not(.active)::before {
+    opacity: 1; 
+}
+
+.configurator-form .step-button-container button.active {
+    background: var(--color-active-step-btn);
+}
+
+.configurator-form .step-container {
+    display: none;
+    justify-content: center;
+    gap: calc(0.5 * var(--default-margin));
+    opacity: 1;
+    transition: all .4s ease;
+}
+
+.configurator-form .step-container label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    height: 7.5rem;
+    border-radius: var(--default-border-radius);
+    background-color: var(--color-bg-card);
+    transition: all .4s ease;
+    cursor: pointer;
+}
+
+.configurator-form .step-container[data-stage = '4'] label {
+    height: 12.08rem;
+}
+
+.configurator-form .step-container[data-stage = '4'] button.next-step {
+    height: 12.08rem;
+    flex: 1;
+}
+
+.configurator-form .step-container[data-stage = '5'] {
+    flex-wrap: wrap;
+}
+
+.configurator-form .step-container[data-stage = '5'] label {
+    flex: 0 1 calc(100% / 4.2);
+    height: 5.2rem;
+}
+.configurator-form .step-container[data-stage = '5'] label p {
+    font-size: 1.67rem;
+}
+
+.configurator-form .step-container[data-stage = '6'] label {
+    height: 5.2rem;
+}
+
+.configurator-form .step-container[data-stage = '6'] label p {
+    font-size: 1.67rem;
+}
+
+.configurator-form button.next-step {
+    flex: 0 1 calc(100% / 4.2);
+    height: 5.2rem;
+    background-color: var(--color-main);
+    border-radius: var(--default-border-radius);
+    color: var(--color-third-main);
+    font-weight: 700;
+    font-size: 1.67rem;
+    transition: all .4s ease;
+}
+
+.configurator-form .step-container.active-step {
+    display: flex;
+}
+
+.configurator-form .hidden {
+    opacity: 0;
+}
+
+.configurator-form .step-container label input {
+    display: none;
+}
+
+.configurator-form .step-container label p {
+    font-weight: 700;
+    font-size: 2.67rem;
+}
+
+.configurator-form .step-container label:hover {
+    background-color: var(--color-second-main);
+}
+
+.configurator-form .step-container label:has(input:checked) {
+    background-color: var(--color-second-main); 
+}
+
+#yandex_rtb_R-A-12701756-3 {
+    width: 20rem;            
+    height: 7rem;
+    margin: 0 auto;
+    margin-bottom: calc(2 * var(--default-margin)); 
+    margin-top: auto;          
+    background-color: var(--color-main-text);               
+    border-radius: var(--default-border-radius); 
+}    
